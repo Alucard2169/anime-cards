@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime-cards</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1 class="anime">アニメ</h1>
+    <main class="container">
+        <div class="nav-buttons">
+            <button class="next"><img src="images/angle-left-solid.svg" alt="next"></button>
+            <button class="prev"><img src="images/angle-right-solid.svg" alt="previous"></button>
+        </div>
+        <div class="options">
+            <div class="for-anime">
+                <button class="popular">Popularity</button>
+                <button class="airing">Airing</button>
+            </div>
+            <input type="checkbox"  id="theme">
+            <label for="theme" class="theme"><img src="images/moon-solid.svg" class="theme-icon"></label>
+        </div>
+
+        <div class="card">
+            <div class="upper-section">
+                <div class="media">
+                    <div class="image-con">
+                        <img src="images/10.jpg" alt="" class="image">
+                    </div>
+                    <a href="#" class="trailer">
+                    
+                    <iframe class="aniTrailer" width="380" height="280" src="https://www.youtube.com/embed/w6G7Yfp1pVE" title="YouTube video player"
+                        frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe></a>
+                </div>
+                <div class="details">
+                    <h2 class="name">This</h2>
+                    <div class='other_details'>
+                        <h3 class="japanese_title"></h3>
+                        <a href="#" class="mal_link" id="malLink" target="_blank">MAL</a>
+                        <p class="type">type:<span id="typ">TV</span></p>
+                        <p class="status">status:<span id="stat">airing</span></p>
+                        <p class="episodes">episodes:<span id="epi">12</span></p>
+                        <p class="time-lapse">duration:<span id="time-point">Jan 10, apr 4</span></p>
+                        <p class="rank">Rank:<span id="ranking">5</span></p>
+                        <p class="score">Score:<span id="sco">9.07</span></p>
+                        <p class="rating">Rating:<span id="rank">R</span></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="synopsis">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut perferendis fuga optio quasi beatae aspernatur quod, repellat asperiores. At nostrum ut dolor quisquam optio tenetur enim expedita, blanditiis voluptates accusamus?
+                Quam id corrupti non doloremque deserunt quos quidem laborum, omnis dolore nesciunt suscipit dolorem quas! Repudiandae et rerum unde suscipit magni amet. Alias et facilis natus minima, in suscipit deserunt.
+                Expedita dolores cupiditate iste dolor praesentium ut ipsum? Iusto corporis iste iure commodi culpa sint totam eos facere delectus deserunt!</p>
+            </div>
+            <aside>
+                <p class="season">Season:<span id="seas"></span></p>
+                <p class="year">Year: <span id="ye"></span></p>
+                <p class="studio"><span id="st"></span></p>
+                <p class="demographics"><span><a href="#" class="link" target="_blank"></a></span></p>
+                <p class="trailer-link"><span><a href="#" class="link-trailer">trailer</a></span></p>
+            </aside>
+        </div>
+    </main>
+    <h1 class="manga">マンガ</h1>
+
+    <aside class="pagination">
+        <button class="nextPage">NEXT PAGE!?</button>
+        <button class="return">RETURN TO 1</button>
+    </aside>
+
+</body>
+</html
