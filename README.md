@@ -21,4 +21,4 @@
 ---
 ## PREVIEW
 
-[!desktop]("../images/desktop.png")
+[!desktop]("./images/desktop.png")
