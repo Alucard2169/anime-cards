@@ -6,6 +6,8 @@
 ## basic functionality
 
 * Using a fetch function the data is requested from server and served on the DOM
+> each page of data containes 25 objects
+> after you reach the end of one page a pop asks you to move on to the next page or restart
 
 ## What i learned from this Project
 
