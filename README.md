@@ -21,4 +21,4 @@
 ---
 ## PREVIEW
 
-![desktop]("https://github.com/Alucard2169/anime-cards/blob/main/images/desktop.png")
+![desktop]("https://github.com/Alucard2169/anime-cards/blob/main/images/desktop.png?raw=true")
