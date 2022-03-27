@@ -85,6 +85,7 @@ popular.addEventListener('click', () => {
     if (choice == 'bypopularity') return;
     else {
         choice = 'bypopularity';
+        i = 0;
         getData();
     }
 })
@@ -99,6 +100,7 @@ airing.addEventListener('click', () => {
     if (choice == 'airing') return;
     else {
         choice = 'airing';
+        i = 0;
         getData();
     }
 })
