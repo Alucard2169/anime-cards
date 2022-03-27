@@ -1,6 +1,7 @@
 # anime-cards
 
-* ## Anime-cards is made using [JIKAN]("https://jikan.moe/") api
+* ## Anime-cards is made using [JIKAN](https://jikan.moe/) api
+* > [JIKAN v4 DOCS](https://docs.api.jikan.moe/)
   
 ---
 ## basic functionality
