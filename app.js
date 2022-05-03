@@ -20,6 +20,7 @@ let studio = document.querySelector('#st');
 let demographic = document.querySelector('.link');
 let trailer = document.querySelector('.link-trailer');
 
+
 // interactive component variable declaration
 
 const backward = document.querySelector('.next');
@@ -36,23 +37,23 @@ const home = document.querySelector('.return');
 
 // function to update display upon receiving the data from Jaiken api 
 function updateDisplay(list) {
-   const  { title, title_japanese, url, type, status, episodes, rank, score, rating, synopsis, year } = list;
+    
     animeImage.src = list.images.jpg['image_url'];
     // stopping the autoplay when video loads (used: autoplay = 0)
-    anime_trailer.src = `${list.trailer['embed_url']}?autoplay=1`;
-    animeName.textContent = title;
-    japaneseName.textContent = title_japanese;
-    malLink.href = url;
-    type.textContent = type;
-    stat.textContent = status;
-    episodeCount.textContent = episodes;
+    anime_trailer.src = `${list.trailer['embed_url']}?autoplay=0`;
+    animeName.textContent = list['title'];
+    japaneseName.textContent = list.title_japanese;
+    malLink.href = list.url;
+    type.textContent = list.type;
+    stat.textContent = list.status;
+    episodeCount.textContent = list.episodes;
     timeLapse.textContent = list.aired['string'];
-    rank.textContent = rank;
-    score.textContent = score;
-    rating.textContent = rating;
-    synopses.textContent = synopsis;
-    season.textContent = season;
-    year.textContent = year;
+    rank.textContent = list.rank;
+    score.textContent = list.score;
+    rating.textContent = list.rating;
+    synopses.textContent = list.synopsis;
+    season.textContent = list.season;
+    year.textContent = list.year;
     studio.textContent = list.studios[0].name;
     demographic.textContent = list.demographics[0].name;
     demographic.href = list.demographics[0].url;
@@ -85,7 +86,6 @@ popular.addEventListener('click', () => {
     if (choice == 'bypopularity') return;
     else {
         choice = 'bypopularity';
-        i = 0;
         getData();
     }
 })
@@ -100,7 +100,6 @@ airing.addEventListener('click', () => {
     if (choice == 'airing') return;
     else {
         choice = 'airing';
-        i = 0;
         getData();
     }
 })
@@ -180,14 +179,12 @@ theme.addEventListener('change', () => {
 async function getData() {
     //fetching the data 
     let res = await fetch(`https://api.jikan.moe/v4/top/${prefer}?type=tv&filter=${choice}&page=${page}`)
-    
-    let data = await res.json();
 
+    let data = await res.json();
     // path to the data object is data.data
 
     // passing the data in in the update function to update the display
     updateDisplay(data.data[i])
 }
-setTimeout(() => {
- getData()
-}, 2000);
+
+getData()
