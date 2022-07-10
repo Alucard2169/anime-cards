@@ -7,8 +7,11 @@
     <title>Anime-cards</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="shortcut icon" href="/images/10-modified.png" type="image/x-icon">
 </head>
 <body>
+    <div class="loading"></div>
     <h1 class="anime">アニメ</h1>
     <main class="container">
         <div class="nav-buttons">
@@ -28,11 +31,10 @@
             <div class="upper-section">
                 <div class="media">
                     <div class="image-con">
-                        <img src="images/10.jpg" alt="" class="image">
+                        <img src="" alt="" class="image">
                     </div>
                     <a href="#" class="trailer">
-                    
-                    <iframe class="aniTrailer" width="380" height="280" src="https://www.youtube.com/embed/w6G7Yfp1pVE" title="YouTube video player"
+                    <iframe class="aniTrailer" width="380" height="280" src="" title="YouTube video player" 
                         frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" SameSite=None; Secure
                         allowfullscreen></iframe></a>
                 </div>
@@ -41,21 +43,19 @@
                     <div class='other_details'>
                         <h3 class="japanese_title"></h3>
                         <a href="#" class="mal_link" id="malLink" target="_blank">MAL</a>
-                        <p class="type">type:<span id="typ">TV</span></p>
-                        <p class="status">status:<span id="stat">airing</span></p>
-                        <p class="episodes">episodes:<span id="epi">12</span></p>
-                        <p class="time-lapse">duration:<span id="time-point">Jan 10, apr 4</span></p>
-                        <p class="rank">Rank:<span id="ranking">5</span></p>
-                        <p class="score">Score:<span id="sco">9.07</span></p>
-                        <p class="rating">Rating:<span id="rank">R</span></p>
+                        <p class="type">type:<span id="typ"></span></p>
+                        <p class="status">status:<span id="stat"></span></p>
+                        <p class="episodes">episodes:<span id="epi"></span></p>
+                        <p class="time-lapse">duration:<span id="time-point"></span></p>
+                        <p class="rank">Rank:<span id="ranking"></span></p>
+                        <p class="score">Score:<span id="sco"></span></p>
+                        <p class="rating">Rating:<span id="rank"></span></p>
 
                     </div>
                 </div>
             </div>
             <div class="synopsis">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut perferendis fuga optio quasi beatae aspernatur quod, repellat asperiores. At nostrum ut dolor quisquam optio tenetur enim expedita, blanditiis voluptates accusamus?
-                Quam id corrupti non doloremque deserunt quos quidem laborum, omnis dolore nesciunt suscipit dolorem quas! Repudiandae et rerum unde suscipit magni amet. Alias et facilis natus minima, in suscipit deserunt.
-                Expedita dolores cupiditate iste dolor praesentium ut ipsum? Iusto corporis iste iure commodi culpa sint totam eos facere delectus deserunt!</p>
+                <p></p>
             </div>
             <aside>
                 <p class="season">Season:<span id="seas"></span></p>
@@ -68,7 +68,7 @@
     </main>
     <h1 class="manga">マンガ</h1>
 
-    <aside class="pagination">
+    <aside class="pagination content">
         <button class="nextPage">NEXT PAGE!?</button>
         <button class="return">RETURN TO 1</button>
     </aside>
