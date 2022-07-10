@@ -25,6 +25,46 @@ body {
     height: 100vh;
 }
 
+.loading {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    z-index: 100;
+    visibility: hidden;
+}
+
+.loading::after {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #9c41f2;
+    animation: spin 1s infinite linear;
+    border-radius: 100%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    text-align: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loaderDisplay {
+    visibility: visible;
+}
+
 h1 {
     writing-mode: vertical-rl;
     font-size: 5rem;
@@ -346,4 +386,5 @@ h1 {
         width: 100%;
         margin: 170% 0;
     }
+
 }
