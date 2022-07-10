@@ -1,5 +1,3 @@
-
-
 // media variable declaration
 let animeImage = document.querySelector('.image');
 let anime_trailer = document.querySelector('.aniTrailer')
@@ -35,9 +33,19 @@ const nextPage = document.querySelector('.nextPage');
 const home = document.querySelector('.return');
 
 
+//loader
+const loader = document.querySelector('.loading');
+
+const startLoading = () => {
+    loader.classList.add('loaderDisplay')
+}
+const removeLoading = () => {
+    loader.classList.remove('loaderDisplay')
+}
+
 // function to update display upon receiving the data from Jaiken api 
-function updateDisplay(list) {
-    
+const updateDisplay = (list) => {
+    removeLoading()
     animeImage.src = list.images.jpg['image_url'];
     // stopping the autoplay when video loads (used: autoplay = 0)
     anime_trailer.src = `${list.trailer['embed_url']}?autoplay=0`;
@@ -63,50 +71,38 @@ function updateDisplay(list) {
 
 // interactive button actions
 
-
-
 //1. set prefer to anime by default
 let prefer = 'anime';
 
 
-
-
 // 2. Choosing anime based on popularity
+
 
 // declaring variable choice with a value of airing by default
 let choice = 'airing';
 
-/* if the user clicks the popular button to sort anime by popularity,
-function will check if the choice is already set to popularity
-if it is then it won't do anything and return as it is, 
-else choice will be set to popular and getData() will be called
-*/
-
+// set sort by Popularity
 popular.addEventListener('click', () => {
     if (choice == 'bypopularity') return;
     else {
         choice = 'bypopularity';
+        i = 0;
         getData();
     }
 })
 
-/* if the user clicks the airing button to sort anime by airing,
-function will check if the choice is already set to airing
-if it is then it won't do anything and return as it is, 
-else choice will be set to airing and getData() will be called
-*/
-
+// set sort by airing
 airing.addEventListener('click', () => {
     if (choice == 'airing') return;
     else {
         choice = 'airing';
+        i = 0;
         getData();
     }
 })
 
 
 // 3. forward and backward button
-
 let i = 0;
 let page = 1;
 forward.addEventListener('click', () => {
@@ -151,6 +147,19 @@ home.addEventListener('click', () => {
     getData();
 })
 
+// async function to fetch data from the api
+const getData = async () => {
+    startLoading()
+    //fetching the data 
+    let res = await axios.get(`https://api.jikan.moe/v4/top/${prefer}?type=tv&filter=${choice}&page=${page}`)
+    let data = res.data.data;
+    // passing the data in in the update function to update the display
+    updateDisplay(data[i])
+}
+
+getData()
+
+
 // 5. dark theme button
 theme.checked = true;
 theme.addEventListener('change', () => {
@@ -175,16 +184,5 @@ theme.addEventListener('change', () => {
 
 
 
-// async function to fetch data from the api
-async function getData() {
-    //fetching the data 
-    let res = await fetch(`https://api.jikan.moe/v4/top/${prefer}?type=tv&filter=${choice}&page=${page}`)
 
-    let data = await res.json();
-    // path to the data object is data.data
 
-    // passing the data in in the update function to update the display
-    updateDisplay(data.data[i])
-}
-
-getData()
